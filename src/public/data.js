@@ -5,6 +5,8 @@ let number_one = document.getElementById("number_one");
 let number_two = document.getElementById("number_two");
 let total = document.getElementById("number_total");
 
+let API_URL = "http://localhost:3008/data/61df0911749dc286aad4c66a"
+
 window.addEventListener("load", () => {
   console.log("windows se cargo");
 });
