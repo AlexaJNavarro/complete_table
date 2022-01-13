@@ -6,23 +6,27 @@ let number_two = document.getElementById("number_two");
 let total = document.getElementById("number_total");
 
 let API_URL = "http://localhost:3008/data";
-// const xhr = new XMLHttpRequest();
 
-// //CONSUMIENDO ENDPOINT <<GET ALL DATA>>
-// function onRequestHandler() {
-//   if (this.readyState === 4 && this.status === 200) {
-//     const data = JSON.parse(this.response);
-//     number.value = data.data[0].number;
-//     number_one.value = data.data[0].number_one;
-//     number_two.value = data.data[0].number_two;
-//     total.value = data.data[0].total;
-//   }
-// }
-// xhr.addEventListener("load", onRequestHandler);
-// xhr.open("GET", `${API_URL}/61df0911749dc286aad4c66a`);
-// xhr.send();
+window.addEventListener("load", () => {
+  axios({
+    method: "GET",
+    url: `${API_URL}/61df0911749dc286aad4c66a`,
+  })
+    .then((res) => {
+      number.value = res.data.data[0].number;
+      number_one.value = res.data.data[0].number_one;
+      number_two.value = res.data.data[0].number_two;
+      total.value =
+        res.data.data[0].number +
+        res.data.data[0].number_one +
+        res.data.data[0].number_two;
+    })
+    .catch((err) => {
+      console.log("ERROR");
+      console.log(err);
+    });
+});
 
-//CONSUMIENDO ENDPOINT <<UPDATE DATA>>
 function update() {
   var body = {
     number: number.value,
@@ -33,17 +37,12 @@ function update() {
       Number(number_one.value) +
       Number(number_two.value),
   };
-
-  console.log("body");
-  console.log(body);
   axios({
     method: "PUT",
     url: `${API_URL}/61df0911749dc286aad4c66a`,
     data: body,
   })
     .then((res) => {
-      console.log("UPDATE");
-      console.log(res);
     })
     .catch((err) => {
       console.log("ERROR");
