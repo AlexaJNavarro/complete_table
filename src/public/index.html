@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <div id="form">
+      <!-- <div id="form">
             <input type="number" id="number">
         </div>
         <div id="table">
 
-            <table class="default">
+            <table class="table">
 
                 <tr>
               
-                  <td>Valor 1</td>
+                  <td class="celda">Valor 1</td>
               
-                  <td>Valor 2</td>
+                  <td class="celda">Valor 2</td>
               
-                  <td>Total</td>
+                  <td class="celda">Total</td>
               
                 </tr>
               
@@ -43,11 +43,28 @@
                 </tr>
               
               </table>
-        </div>
+        </div> -->
 
+      <!-- <table id="table">
+          <tr id="cabeceras"></tr>
+        </table> -->
+      <table id="tableData" class="tableData">
+        <tr>
+          <th class="tableData">PERIODO ACADÉMICO</th>
+          <th class="tableData">NOMBRE DEL CURSO</th>
+          <th class="tableData">TIPO DE ESTUDIOS</th>
+          <th class="tableData">TIPO DE CURSO</th>
+          <th class="tableData">PRESENCIAL</th>
+          <th class="tableData">VIRTUAL</th>
+          <th class="tableData">TOTAL</th>
+        </tr>
+
+      </table>
+      <button class="btn" id="btn">AGREGAR FILA</button>
+      <button class="btn" id="btnStart">COMENZAR</button>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/socket.io/socket.io.js" charset="UTF-8"></script>
     <script src="data.js" charset="UTF-8"></script>
-</body>
+  </body>
 </html>

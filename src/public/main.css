@@ -1,0 +1,22 @@
+.tableData{
+    border: solid 1px #000;
+    margin-top: 3rem;
+}
+
+.celda{
+    border: solid 1px #000;
+}
+
+.btn{
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2rem;
+    background-color: rgb(89, 50, 226);
+    color: white;
+    font-size: 15px;
+    border: solid 1px rgb(18, 3, 70);
+}
+
+.btn:active{
+    background-color: pink;
+}
